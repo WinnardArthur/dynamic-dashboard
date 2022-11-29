@@ -1,12 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const Port = process.env.PORT || 5000;
 const app = express()
+require('dotenv').config();
 
 const Stats = require("./models/Stats");
 
-require('dotenv').config();
+const Port = process.env.PORT || 5000;
 
 app.use(cors());
 
@@ -38,8 +38,8 @@ app.get("/api/:id", async (req, res) => {
 
 
 if(process.env.NODE_ENV === 'production') {
-    app.use(express.static(__dirnamen + "/client/build"))
-    
+    app.use(express.static(__dirname + "/client/build"))
+
     app.get("*", (req, res) => {
         res.sendFile(__dirname + "/client/build/index.html")
     })
