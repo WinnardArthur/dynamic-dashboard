@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const Stats = require("./models/Stats");
 
-const Port = process.env.PORT || 5000;
+const Port = process.env.PORT;
 
 app.use(cors());
 
