@@ -4,7 +4,7 @@ import { Paper, Typography, Select, FormControl, MenuItem, InputLabel } from '@m
 import axios from 'axios';
 import { ResponsiveContainer, AreaChart, Tooltip, Area, Legend, YAxis, XAxis } from 'recharts';
 
-const API = axios.create({baseURL: "http://localhost:5000"});
+const API = axios.create({baseURL: "https://dynamic-dashboard1.herokuapp.com/"});
 
 export default function Region () {
     const [filter, setFilter] = useState('');
