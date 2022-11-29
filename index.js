@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const app = express()
+const app = express();
+const path = require('path');
 require('dotenv').config();
 
 const Stats = require("./models/Stats");
@@ -38,10 +39,10 @@ app.get("/api/:id", async (req, res) => {
 
 
 if(process.env.NODE_ENV === 'production') {
-    app.use(express.static(__dirname + "/client/build"))
+    app.use(express.static(path.join(__dirname, "/client/build")))
 
     app.get("*", (req, res) => {
-        res.sendFile(__dirname + "/client/build/index.html")
+        res.sendFile(path.join(__dirname, "client", "build", "index.html"))
     })
 } else {
     app.get("/", (req, res) => {
