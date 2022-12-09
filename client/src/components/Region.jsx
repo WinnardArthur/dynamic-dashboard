@@ -3,8 +3,8 @@ import { Box } from '@mui/system';
 import { Paper, Typography, Select, FormControl, MenuItem, InputLabel } from '@mui/material';
 import axios from 'axios';
 import { ResponsiveContainer, AreaChart, Tooltip, Area, Legend, YAxis, XAxis } from 'recharts';
+import { API } from '../api';
 
-const API = axios.create({baseURL: "https://dynamic-dashboard1.herokuapp.com/"});
 
 export default function Region () {
     const [filter, setFilter] = useState('');

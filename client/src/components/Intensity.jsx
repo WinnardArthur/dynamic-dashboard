@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Box } from '@mui/system';
 import { Paper, Typography, Select, FormControl, MenuItem, InputLabel } from '@mui/material';
-import axios from 'axios';
 import { ResponsiveContainer, LineChart, Line, Tooltip, YAxis, XAxis } from 'recharts';
+import { API } from '../api';
 
-const API = axios.create({baseURL: "https://dynamic-dashboard1.herokuapp.com/"});
 
 export default function Intensity () {
     const [filter, setFilter] = useState('');

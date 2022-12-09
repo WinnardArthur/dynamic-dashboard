@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Box } from '@mui/system';
 import { Paper, Typography, Select, FormControl, MenuItem, InputLabel } from '@mui/material';
-import axios from 'axios';
 import { ResponsiveContainer, AreaChart, Tooltip, Area, XAxix, YAxis, XAxis } from 'recharts';
-
-const API = axios.create({baseURL: "https://dynamic-dashboard1.herokuapp.com/"});
+import { API } from '../api';
 
 export default function Likelihood () {
     const [filter, setFilter] = useState('');
